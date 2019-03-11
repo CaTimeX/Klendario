@@ -27,7 +27,7 @@ public class Klendario {
     fileprivate static let manager = Klendario()
     
     /// The default `eventStore` object to use in the get/add/remove tasks.
-    fileprivate var eventStore = EKEventStore()
+    public var eventStore = EKEventStore()
     
     
     // MARK: - Authorization
