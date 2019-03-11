@@ -51,8 +51,8 @@ public class Klendario {
             completion?(false, status, KDError.authorizationFailed(reason: .authorizationDenied))
         }
     }
-    public class func getEventStore() -> EKEventStore() {
-        return this.eventStore
+    public class func getEventStore () -> EKEventStore {
+        return Klendario.manager.eventStore
     }
     
     /// Returns a boolean indicating if user has granted access to the device's calendar.
