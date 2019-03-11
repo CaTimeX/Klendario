@@ -27,7 +27,7 @@ public class Klendario {
     fileprivate static let manager = Klendario()
     
     /// The default `eventStore` object to use in the get/add/remove tasks.
-    public var eventStore = EKEventStore()
+    fileprivate var eventStore = EKEventStore()
     
     
     // MARK: - Authorization
@@ -50,6 +50,9 @@ public class Klendario {
         case .denied:
             completion?(false, status, KDError.authorizationFailed(reason: .authorizationDenied))
         }
+    }
+    public class func getEventStore() -> EKEventStore() {
+        return this.eventStore
     }
     
     /// Returns a boolean indicating if user has granted access to the device's calendar.
